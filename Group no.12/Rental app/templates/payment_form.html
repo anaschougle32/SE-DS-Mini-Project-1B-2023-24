@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <h1>Payment Checkout</h1>
+    <p>Order ID: {{ order_id }}</p>
+    <p>Amount: {{ amount }}</p>
+
+    <form action="/payment/success" method="post">
+        <script
+            src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="rzp_test_ApufYMBu9p1t2M"
+            data-amount="{{ amount }}"
+            data-currency="INR"
+            data-order_id="{{ order_id }}"
+            data-name="Rental Hub"
+            data-description="Payment for your product"
+            data-image="https://i.pinimg.com/736x/24/a9/a2/24a9a23b35abe862d872638b5ed65a94.jpg"
+            data-prefill.name="Customer Name"
+            data-prefill.email="customer@example.com"
+            data-theme.color="#3399cc"
+        >
+        </script>
+        
+    </form>
+</body>
+</html>
